@@ -1,4 +1,5 @@
-﻿using DataAccess.Abstracts;
+﻿using Core.Utilities.Results;
+using DataAccess.Abstracts;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,11 @@ namespace Business.Abstracts
 {
     public interface ICarService
     {
-        List<Car> GetAll();
-        Car GetById(int CarId);
-        public void Add(Car car);
-        public void Delete(Car car);
-        public void Update(Car car);
-        public List<CarDetailDto> GetCarDetail(); 
+        IDataResult<List<Car>> GetAll();
+        IResult GetById(int CarId);
+        IResult Add(Car car);
+        IResult  Delete(Car car);
+        IResult  Update(Car car);
+        IDataResult<List<CarDetailDto>> GetCarDetail(); 
     }
 }

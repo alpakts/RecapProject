@@ -8,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace Business.Abstracts
 {
-    public interface IBrandService
+    public interface IRentalService
     {
-        public IDataResult<List<Brand>> GetAll();
+        IDataResult<List<Rental>> GetAll();
+        IResult Add(Rental rental);
+        IResult Delete(Rental rental);
+        IResult Update(Rental rental);
 
-        public IResult Add(Brand brand);
-        
     }
 }
