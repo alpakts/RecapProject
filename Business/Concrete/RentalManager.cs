@@ -48,6 +48,12 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Rental>>(_rentdal.GetAll(), Messages.Listed);
         }
 
+        public IResult GetById(int id)
+        {
+            _rentdal.Get(c=> c.UserId==id);
+            return new SuccessResult();        
+        }
+
         public IResult Update(Rental rental)
         {
             return new SuccessResult(Messages.Updated);
